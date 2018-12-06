@@ -2,8 +2,18 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <memory>
 
-int main() {
+struct Entity {
+    int id;
+    std::string name;
+    Entity(int id, std::string name) : id(id), name(name) {}
+    friend std::ostream& operator<< (std::ostream& stream, const Entity& entity) {
+        return stream << '{' << "id: " << entity.id << ", " << "name: " << entity.name << '}';
+    }
+};
+
+int main(int argc, char** argv) {
     std::cout << "INFORMATION:\n"
               << "\tName: " << PACKAGE_NAME << "\n"
               << "\tVersion: " << PACKAGE_VERSION << "\n"
@@ -18,6 +28,11 @@ int main() {
         std::cout << i << " ";
     }
     std::cout << std::endl << std::endl;
+
+    // 2.)
+    std::cout << "2.) initialize a struct on the heap and call method to print its properties" << std::endl;
+    std::unique_ptr<Entity> entity1 = std::make_unique<Entity>(1,"fred");
+    std::cout << *entity1 << std::endl;
 
     return 0;
 }
