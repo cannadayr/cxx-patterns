@@ -13,6 +13,9 @@ AC_PROG_CXX([g++ clang++])
 # use C++14
 AX_CXX_COMPILE_STDCXX(14,[noext],[mandatory])
 
+# check for libpthread
+AX_PTHREAD
+
 # Makefiles to output
 AC_CONFIG_FILES([Makefile])
 

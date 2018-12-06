@@ -10,3 +10,9 @@ bin_PROGRAMS = \
 cxx_patterns_SOURCES = \
 	src/main.cpp
 
+cxx_patterns_CXXFLAGS = \
+	${PTHREAD_CFLAGS}
+
+cxx_patterns_LDFLAGS = \
+	${PTHREAD_LIBS}
+
