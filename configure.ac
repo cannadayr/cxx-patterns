@@ -10,8 +10,8 @@ AM_INIT_AUTOMAKE
 # compilers to search for
 AC_PROG_CXX([g++ clang++])
 
-# use C++11
-AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])
+# use C++14
+AX_CXX_COMPILE_STDCXX(14,[noext],[mandatory])
 
 # Makefiles to output
 AC_CONFIG_FILES([Makefile])
