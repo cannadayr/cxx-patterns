@@ -1,5 +1,6 @@
 *.swp
 *.o
+*.tar.gz
 .deps/
 .dirstamp
 Makefile
@@ -8,10 +9,11 @@ aclocal.m4
 autom4te.cache/
 config.h
 config.h.in
+config.h.in~
 config.log
 config.status
 configure
-cxx_patterns
+cxx-patterns
 depcomp
 install-sh
 missing
